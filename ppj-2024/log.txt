@@ -1,31 +1,29 @@
-00:16:18.231 [main] INFO  n.c.ppj2024.Ppj2024Application - Starting Ppj2024Application using Java 21.0.2 with PID 243251 (/home/des/Documents/school/ppj-2024/ppj-2024/target/classes started by des in /home/des/Documents/school/ppj-2024/ppj-2024)
-00:16:18.233 [main] DEBUG n.c.ppj2024.Ppj2024Application - Running with Spring Boot v3.2.5, Spring v6.1.6
-00:16:18.234 [main] INFO  n.c.ppj2024.Ppj2024Application - The following 1 profile is active: "debug"
-00:16:19.377 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
-00:16:19.378 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-00:16:19.379 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-00:16:19.417 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-00:16:19.542 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-00:16:19.580 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-00:16:19.612 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-00:16:19.817 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-00:16:20.192 [main] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
-00:16:20.194 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.hsqldb.jdbc.JDBCConnection@7f4f1536
-00:16:20.196 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-00:16:20.230 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.7.2 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
-00:16:20.234 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-00:16:20.931 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-00:16:21.635 [Thread-2] INFO  n.c.p.service.WeatherApiService - Entering initial loop over cities in config.
-00:16:21.636 [Thread-2] INFO  n.c.p.service.WeatherApiService - Prague@CZ
-00:16:21.732 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-00:16:22.391 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
-00:16:22.411 [main] INFO  n.c.ppj2024.Ppj2024Application - Started Ppj2024Application in 4.565 seconds (process running for 5.079)
-00:16:22.930 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1052, city=City [idCity=1, name=Prague, country=Country [idCountry=1, name=CZ, code=CZ], latitude=50.0874654, longitude=14.4212535], date=Mon May 20 00:11:46 CEST 2024, temperature=285.16, pressure=1008.0, humidity=89.0, wind=3.6, rain=NaN]
-00:16:24.030 [Thread-2] INFO  n.c.p.service.WeatherApiService - London@GB
-00:16:24.496 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1053, city=City [idCity=2, name=London, country=Country [idCountry=2, name=GB, code=GB], latitude=51.5073219, longitude=-0.1276474], date=Mon May 20 00:06:02 CEST 2024, temperature=287.78, pressure=1015.0, humidity=82.0, wind=3.6, rain=NaN]
-00:16:25.596 [Thread-2] INFO  n.c.p.service.WeatherApiService - Germany@D
-00:16:26.134 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1054, city=City [idCity=3, name=Germany, country=Country [idCountry=3, name=D, code=D], latitude=45.6143558, longitude=4.6831358], date=Mon May 20 00:16:26 CEST 2024, temperature=287.53, pressure=1011.0, humidity=88.0, wind=1.24, rain=NaN]
-00:16:27.235 [Thread-2] INFO  n.c.p.service.WeatherApiService - Initial loop complete.
-00:16:52.656 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1055, city=City [idCity=3, name=Germany, country=Country [idCountry=3, name=D, code=D], latitude=45.6143558, longitude=4.6831358], date=Mon May 20 00:16:02 CEST 2024, temperature=287.53, pressure=1011.0, humidity=88.0, wind=1.24, rain=NaN]
-00:16:53.885 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1056, city=City [idCity=1, name=Prague, country=Country [idCountry=1, name=CZ, code=CZ], latitude=50.0874654, longitude=14.4212535], date=Mon May 20 00:11:30 CEST 2024, temperature=285.11, pressure=1008.0, humidity=89.0, wind=3.6, rain=NaN]
-00:16:55.012 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1057, city=City [idCity=2, name=London, country=Country [idCountry=2, name=GB, code=GB], latitude=51.5073219, longitude=-0.1276474], date=Mon May 20 00:12:19 CEST 2024, temperature=287.7, pressure=1015.0, humidity=82.0, wind=3.6, rain=NaN]
+00:35:23.375 [main] INFO  n.c.ppj2024.Ppj2024Application - Starting Ppj2024Application using Java 21.0.2 with PID 249157 (/home/des/Documents/school/ppj-2024/ppj-2024/target/classes started by des in /home/des/Documents/school/ppj-2024/ppj-2024)
+00:35:23.377 [main] DEBUG n.c.ppj2024.Ppj2024Application - Running with Spring Boot v3.2.5, Spring v6.1.6
+00:35:23.378 [main] INFO  n.c.ppj2024.Ppj2024Application - The following 1 profile is active: "debug"
+00:35:24.593 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+00:35:24.593 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+00:35:24.636 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+00:35:24.766 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+00:35:24.809 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+00:35:24.837 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+00:35:25.072 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+00:35:25.435 [main] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
+00:35:25.436 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.hsqldb.jdbc.JDBCConnection@280d5a82
+00:35:25.437 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+00:35:25.467 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.7.2 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
+00:35:25.470 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+00:35:26.168 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+00:35:26.905 [Thread-2] INFO  n.c.p.service.WeatherApiService - Entering initial loop over cities in config.
+00:35:26.906 [Thread-2] INFO  n.c.p.service.WeatherApiService - Prague@CZ
+00:35:27.007 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+00:35:27.703 [main] INFO  n.c.ppj2024.Ppj2024Application - Started Ppj2024Application in 4.702 seconds (process running for 5.161)
+00:35:28.744 [Thread-2] INFO  n.c.p.service.WeatherApiService - London@GB
+00:35:29.911 [Thread-2] INFO  n.c.p.service.WeatherApiService - Germany@D
+00:35:31.049 [Thread-2] INFO  n.c.p.service.WeatherApiService - Initial loop complete.
+00:36:00.511 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1102, city=City [idCity=1, name=Prague, country=Country [idCountry=1, name=CZ, code=CZ], latitude=50.0874654, longitude=14.4212535], date=Mon May 20 00:30:30 CEST 2024, temperature=285.08, pressure=1008.0, humidity=89.0, wind=3.6, rain=NaN]
+00:36:12.512 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1103, city=City [idCity=2, name=London, country=Country [idCountry=2, name=GB, code=GB], latitude=51.5073219, longitude=-0.1276474], date=Mon May 20 00:31:21 CEST 2024, temperature=287.17, pressure=1015.0, humidity=82.0, wind=1.79, rain=NaN]
+00:36:35.201 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1104, city=City [idCity=3, name=Germany, country=Country [idCountry=3, name=D, code=D], latitude=45.6143558, longitude=4.6831358], date=Mon May 20 00:36:35 CEST 2024, temperature=286.9, pressure=1011.0, humidity=87.0, wind=1.07, rain=NaN]
+00:36:58.615 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1105, city=City [idCity=2, name=London, country=Country [idCountry=2, name=GB, code=GB], latitude=51.5073219, longitude=-0.1276474], date=Mon May 20 00:34:31 CEST 2024, temperature=287.05, pressure=1015.0, humidity=84.0, wind=3.6, rain=NaN]
+00:37:07.932 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1106, city=City [idCity=1, name=Prague, country=Country [idCountry=1, name=CZ, code=CZ], latitude=50.0874654, longitude=14.4212535], date=Mon May 20 00:36:42 CEST 2024, temperature=285.02, pressure=1008.0, humidity=89.0, wind=3.6, rain=NaN]
+00:37:10.711 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1107, city=City [idCity=3, name=Germany, country=Country [idCountry=3, name=D, code=D], latitude=45.6143558, longitude=4.6831358], date=Mon May 20 00:37:10 CEST 2024, temperature=286.9, pressure=1011.0, humidity=87.0, wind=1.07, rain=NaN]
