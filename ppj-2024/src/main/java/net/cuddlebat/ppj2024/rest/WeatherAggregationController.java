@@ -36,7 +36,7 @@ public class WeatherAggregationController
 	{
 		var data = mr.findByCityId(id);
 		var latest = data.stream()
-			.min((x, y) -> x.getDate().compareTo(y.getDate()))
+			.max((x, y) -> x.getDate().compareTo(y.getDate()))
 			.orElseThrow();
 		
 		var target = new MeasurementAggsSet(
