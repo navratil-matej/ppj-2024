@@ -79,17 +79,27 @@ public class WeatherApiService implements InitializingBean, DisposableBean
 			{
 				try
 				{
+					log.info("Entering initial loop over cities in config.");
+					for(var id : cities)
+					{
+						log.info(id);
+						var pieces = id.split("@");
+						var maybeCity = cr.findByNameAndCountry(pieces[0], pieces[1]);
+						maybeCity.ifPresentOrElse(
+							(x) -> fetchMeasurements(x),
+							( ) -> fetchCity(pieces[0], pieces[1])
+						);
+						Thread.sleep(apiPeriodMs);
+					}
+
+					log.info("Initial loop complete.");
 					while (true)
 					{
-						for(var id : cities)
+						log.trace("Entering a loop over cities in db.");
+						for(var city : cr.findAll())
 						{
-							log.trace(id);
-							var pieces = id.split("@");
-							var maybeCity = cr.findByNameAndCountry(pieces[0], pieces[1]);
-							maybeCity.ifPresentOrElse(
-								(x) -> fetchMeasurements(x),
-								( ) -> fetchCity(pieces[0], pieces[1])
-							);
+							log.trace(city.getName() + ", " + city.getCountry().getName());
+							fetchMeasurements(city);
 							Thread.sleep(apiPeriodMs);
 						}
 					}
@@ -105,6 +115,7 @@ public class WeatherApiService implements InitializingBean, DisposableBean
 					countryCode,
 					apiKey
 				);
+				log.trace(url);
 				var request = HttpRequest.newBuilder(URI.create(url))
 					.header("accept", "application/json")
 					.build();
@@ -113,12 +124,15 @@ public class WeatherApiService implements InitializingBean, DisposableBean
 					.thenApply(JSONArray::new)
 					.join();
 				var maybeCountry = sr.findByCode(countryCode);
+				if(maybeCountry.isEmpty())
+					log.info("Registering new country from code, please edit name: " + countryCode);
 			 	var obj = cr.<City>save(new City(
 			 		name,
 			 		maybeCountry.orElse(sr.<Country>save(new Country(countryCode, countryCode))),
 			 		response.getJSONObject(0).getDouble("lat"),
 			 		response.getJSONObject(0).getDouble("lon")
 			 	));
+			 	log.debug("New entry: " + obj.toString());
 			}
 
 			private void fetchMeasurements(City city)
@@ -129,6 +143,7 @@ public class WeatherApiService implements InitializingBean, DisposableBean
 					city.getLongitude(),
 					apiKey
 				);
+				log.trace(url);
 				var request = HttpRequest.newBuilder(URI.create(url))
 					.header("accept", "application/json")
 					.build();
@@ -152,11 +167,9 @@ public class WeatherApiService implements InitializingBean, DisposableBean
 						wind != null ? wind.optDouble("speed")    : Double.NaN,
 						rain != null ? rain.optDouble("1h")       : Double.NaN
 				 	));
+				 	log.debug("New entry: " + obj.toString());
 				}
-				else
-				{
-					log.trace("Latest measurement already present.");
-				}
+				else log.trace("No new entry.");
 			}
 		};
 	}

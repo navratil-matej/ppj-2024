@@ -126,4 +126,12 @@ public class Measurement
 	{
 		this.rain = rain;
 	}
+
+	@Override
+	public String toString()
+	{
+		return "Measurement [idMeasurement=" + idMeasurement + ", city=" + city + ", date=" + date + ", temperature="
+				+ temperature + ", pressure=" + pressure + ", humidity=" + humidity + ", wind=" + wind + ", rain="
+				+ rain + "]";
+	}
 }

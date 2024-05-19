@@ -1,0 +1,36 @@
+
+<configuration>
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<appender name="FILE" class="ch.qos.logback.core.FileAppender">
+		<file>log.txt</file>
+		<append>false</append>
+		<encoder>
+			<pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+		</encoder>
+	</appender>
+	
+	<logger name="org.springframework" level="WARN"></logger>
+	
+	<root level="INFO">
+		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="FILE"/>
+	</root>
+	
+	<springProfile name="devel">
+		<logger name="net.cuddlebat.ppj2024" level="TRACE"></logger>
+	</springProfile>
+	
+	<springProfile name="debug">
+		<logger name="net.cuddlebat.ppj2024" level="DEBUG"></logger>
+	</springProfile>
+	
+	<springProfile name="prod">
+		<logger name="net.cuddlebat.ppj2024" level="INFO"></logger>
+	</springProfile>
+</configuration>

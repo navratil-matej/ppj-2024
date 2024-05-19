@@ -57,4 +57,10 @@ public class Country
 	{
 		this.code = code;
 	}
+
+	@Override
+	public String toString()
+	{
+		return "Country [idCountry=" + idCountry + ", name=" + name + ", code=" + code + "]";
+	}
 }

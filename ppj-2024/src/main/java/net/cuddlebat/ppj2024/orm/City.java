@@ -85,6 +85,11 @@ public class City
 	{
 		this.longitude = longitude;
 	}
-	
-	
+
+	@Override
+	public String toString()
+	{
+		return "City [idCity=" + idCity + ", name=" + name + ", country=" + country + ", latitude=" + latitude
+				+ ", longitude=" + longitude + "]";
+	}
 }
