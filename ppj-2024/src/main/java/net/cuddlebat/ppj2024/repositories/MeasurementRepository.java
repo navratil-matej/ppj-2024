@@ -16,6 +16,9 @@ public interface MeasurementRepository extends CrudRepository<Measurement, Integ
 {
     @Query("select m from Measurement as m where city.name=:cityName and city.country.code=:countryCode")
 	public List<Measurement> findByCity(@Param("cityName") String cityName, @Param("countryCode") String countryCode);
+    
+    @Query("select m from Measurement as m where city.idCity=:idCity")
+	public List<Measurement> findByCityId(@Param("idCity") long idCity);
 
     @Query("select m from Measurement as m where city.name=:cityName and city.country.code=:countryCode and date=:date")
 	public Optional<Measurement> findByCityAndDate(@Param("cityName") String cityName, @Param("countryCode") String countryCode, @Param("date") Date date);

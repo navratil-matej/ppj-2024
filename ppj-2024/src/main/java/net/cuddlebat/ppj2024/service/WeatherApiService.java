@@ -35,6 +35,8 @@ public class WeatherApiService implements InitializingBean, DisposableBean
 	private long apiPeriodMs;
 	@Value("${weatherApi.cities}")
 	private List<String> cities;
+	@Value("${weatherApi.enabled}")
+	private boolean enabled;
 	
 	@Autowired
 	private MeasurementRepository mr;
@@ -51,15 +53,21 @@ public class WeatherApiService implements InitializingBean, DisposableBean
 	@Override
 	public void afterPropertiesSet() throws Exception
 	{
-		client = HttpClient.newHttpClient();
-		job = makeThread();
-		job.start();
+		if(enabled)
+		{
+			client = HttpClient.newHttpClient();
+			job = makeThread();
+			job.start();
+		}
 	}
 
 	@Override
 	public void destroy() throws Exception
 	{
-		job.interrupt();
+		if(enabled)
+		{
+			job.interrupt();
+		}
 	}
 	
 	private Thread makeThread()

@@ -15,4 +15,7 @@ public interface CityRepository extends CrudRepository<City, Integer>
 {
     @Query("select c from City as c where name=:cityName and country.code=:countryCode")
 	public Optional<City> findByNameAndCountry(@Param("cityName") String cityName, @Param("countryCode") String countryCode);
+
+    @Query("select c from City as c where country.code=:countryCode")
+	public List<City> findByCountry(@Param("countryCode") String countryCode);
 }
