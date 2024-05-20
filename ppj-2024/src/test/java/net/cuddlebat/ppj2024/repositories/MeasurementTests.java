@@ -70,10 +70,10 @@ public class MeasurementTests
 	@Test
 	public void searchControllerTest()
 	{
-		var londAll = mr.findByCity("London", "GB");
+		var londAll = mr.findAllByCity("London", "GB");
 		assertEquals("findByCity(London, GB) should contain two elements", 2, londAll.size());
 		var id = cr.findByNameAndCountry("Prague", "CZ").get().getIdCity();
-		var pragAll = mr.findByCityId(id);
+		var pragAll = mr.findAllByCityId(id);
 		assertEquals("findByCityId(Prague ID) should contain 1 element", 1, pragAll.size());
 		var londNow = mr.findByCityAndDate("London", "GB", now);
 		assertTrue ("findByCityAndDate(London, GB, now) should contain an element", londNow.isPresent());

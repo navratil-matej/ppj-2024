@@ -11,14 +11,14 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import net.cuddlebat.ppj2024.orm.Measurement;
 
-@RepositoryRestResource(collectionResourceRel="Measurement", path="Measurement")
+@RepositoryRestResource(collectionResourceRel="Measurement", path="measurement")
 public interface MeasurementRepository extends CrudRepository<Measurement, Integer>
 {
     @Query("select m from Measurement as m where city.name=:cityName and city.country.code=:countryCode")
-	public List<Measurement> findByCity(@Param("cityName") String cityName, @Param("countryCode") String countryCode);
+	public List<Measurement> findAllByCity(@Param("cityName") String cityName, @Param("countryCode") String countryCode);
     
     @Query("select m from Measurement as m where city.idCity=:idCity")
-	public List<Measurement> findByCityId(@Param("idCity") long idCity);
+	public List<Measurement> findAllByCityId(@Param("idCity") long idCity);
 
     @Query("select m from Measurement as m where city.name=:cityName and city.country.code=:countryCode and date=:date")
 	public Optional<Measurement> findByCityAndDate(@Param("cityName") String cityName, @Param("countryCode") String countryCode, @Param("date") Date date);

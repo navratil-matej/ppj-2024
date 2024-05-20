@@ -56,7 +56,7 @@ public class CityTests
 	@Test
 	public void searchControllerTest()
 	{
-		var gbAll = cr.findByCountry("GB");
+		var gbAll = cr.findAllByCountry("GB");
 		assertEquals("findByCountry(GB) should contain two elements", 2, gbAll.size());
 		var czSn = cr.findByNameAndCountry("Same Name", "CZ");
 		var gbSn = cr.findByNameAndCountry("Same Name", "GB");

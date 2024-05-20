@@ -31,10 +31,10 @@ public class WeatherAggregationController
 	@Autowired
 	private MeasurementRepository mr;
 	
-	@GetMapping("/City/{id}/aggs")
+	@GetMapping("/city/{id}/aggs")
 	public ResponseEntity<MeasurementAggsSet> aggsForCity(@PathVariable("id") long id)
 	{
-		var data = mr.findByCityId(id);
+		var data = mr.findAllByCityId(id);
 		var latest = data.stream()
 			.max((x, y) -> x.getDate().compareTo(y.getDate()))
 			.orElseThrow();
