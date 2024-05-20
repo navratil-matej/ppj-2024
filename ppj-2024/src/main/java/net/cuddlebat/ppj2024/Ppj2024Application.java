@@ -25,7 +25,7 @@ import net.cuddlebat.ppj2024.service.WeatherApiService;
 @EnableWebMvc
 public class Ppj2024Application
 {
-    @Bean @PostConstruct @PreDestroy
+    @Bean @PostConstruct
     WeatherApiService weatherApi()
 	{
 		return new WeatherApiService();

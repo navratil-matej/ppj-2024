@@ -1,5 +1,8 @@
 package net.cuddlebat.ppj2024.orm;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -9,8 +12,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
-@Entity @Table
+@Entity @Table(uniqueConstraints=@UniqueConstraint(columnNames={"name", "country"}))
 public class City
 {
 	@Id @GeneratedValue @Column
@@ -18,7 +22,7 @@ public class City
 	private int idCity;
 	@Column
 	private String name;
-	@ManyToOne @JoinColumn(name="idCountry")
+	@ManyToOne @JoinColumn(name="idCountry") @OnDelete(action = OnDeleteAction.CASCADE)
 	private Country country;
 	@Column
 	private double latitude;

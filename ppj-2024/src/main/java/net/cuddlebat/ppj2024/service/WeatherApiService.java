@@ -128,7 +128,7 @@ public class WeatherApiService implements InitializingBean, DisposableBean
 					log.info("Registering new country from code, please edit name: " + countryCode);
 			 	var obj = cr.<City>save(new City(
 			 		name,
-			 		maybeCountry.orElse(sr.<Country>save(new Country(countryCode, countryCode))),
+			 		maybeCountry.orElseGet(() -> sr.<Country>save(new Country(countryCode, countryCode))),
 			 		response.getJSONObject(0).getDouble("lat"),
 			 		response.getJSONObject(0).getDouble("lon")
 			 	));

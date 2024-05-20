@@ -7,8 +7,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
-@Entity @Table
+@Entity @Table(uniqueConstraints=@UniqueConstraint(columnNames={"name", "code"}))
 public class Country
 {
 	@Id @GeneratedValue @Column

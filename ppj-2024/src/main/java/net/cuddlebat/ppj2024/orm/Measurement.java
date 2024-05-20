@@ -2,6 +2,9 @@ package net.cuddlebat.ppj2024.orm;
 
 import java.util.Date;
 
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -11,14 +14,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
-@Entity @Table
+@Entity @Table(uniqueConstraints=@UniqueConstraint(columnNames={"city", "date"}))
 public class Measurement
 {
 	@Id @GeneratedValue @Column
 	@JsonIgnore
 	private int idMeasurement;
-	@ManyToOne @JoinColumn(name="idCity")
+	@ManyToOne @JoinColumn(name="idCity") @OnDelete(action = OnDeleteAction.CASCADE)
 	private City city;
 	@Column
 	private Date date;
