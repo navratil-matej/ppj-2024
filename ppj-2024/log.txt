@@ -1,31 +1,28 @@
-10:03:41.494 [main] INFO  n.c.ppj2024.Ppj2024Application - Starting Ppj2024Application using Java 21.0.2 with PID 384384 (/home/des/Documents/school/ppj-2024/ppj-2024/target/classes started by des in /home/des/Documents/school/ppj-2024/ppj-2024)
-10:03:41.497 [main] DEBUG n.c.ppj2024.Ppj2024Application - Running with Spring Boot v3.2.5, Spring v6.1.6
-10:03:41.498 [main] INFO  n.c.ppj2024.Ppj2024Application - The following 1 profile is active: "debug"
-10:03:42.579 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-10:03:42.579 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
-10:03:42.621 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
-10:03:42.739 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
-10:03:42.777 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
-10:03:42.803 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
-10:03:43.012 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
-10:03:43.287 [main] INFO  com.zaxxer.hikari.pool.PoolBase - HikariPool-1 - Driver does not support get/set network timeout for connections. (feature not supported)
-10:03:43.288 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.hsqldb.jdbc.JDBCConnection@52f43225
-10:03:43.289 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
-10:03:43.315 [main] WARN  org.hibernate.dialect.Dialect - HHH000511: The 2.7.2 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 8.0.0. Check the community dialects project for available legacy versions.
-10:03:43.318 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-10:03:43.976 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-10:03:44.714 [Thread-2] INFO  n.c.p.service.WeatherApiService - Entering initial loop over cities in config.
-10:03:44.715 [Thread-2] INFO  n.c.p.service.WeatherApiService - Prague@CZ
-10:03:44.813 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-10:03:45.487 [main] INFO  n.c.ppj2024.Ppj2024Application - Started Ppj2024Application in 4.336 seconds (process running for 4.807)
-10:03:45.574 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1002, city=City [idCity=1, name=Prague, country=Country [idCountry=1, name=CZ, code=CZ], latitude=50.0874654, longitude=14.4212535], date=Mon May 20 10:03:45 CEST 2024, temperature=291.67, pressure=1009.0, humidity=70.0, wind=2.06, rain=NaN]
-10:03:46.674 [Thread-2] INFO  n.c.p.service.WeatherApiService - London@GB
-10:03:46.712 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1003, city=City [idCity=2, name=London, country=Country [idCountry=2, name=GB, code=GB], latitude=51.5073219, longitude=-0.1276474], date=Mon May 20 10:00:02 CEST 2024, temperature=286.34, pressure=1015.0, humidity=77.0, wind=2.57, rain=NaN]
-10:03:47.812 [Thread-2] INFO  n.c.p.service.WeatherApiService - Berlin@D
-10:03:47.866 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1004, city=City [idCity=3, name=Berlin, country=Country [idCountry=3, name=D, code=D], latitude=52.5170365, longitude=13.3888599], date=Mon May 20 09:57:39 CEST 2024, temperature=292.67, pressure=1000.0, humidity=74.0, wind=2.57, rain=NaN]
-10:03:48.966 [Thread-2] INFO  n.c.p.service.WeatherApiService - Liberec@CZ
-10:03:49.083 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1005, city=City [idCity=4, name=Liberec, country=Country [idCountry=1, name=CZ, code=CZ], latitude=50.7702648, longitude=15.0583947], date=Mon May 20 10:03:49 CEST 2024, temperature=291.56, pressure=1012.0, humidity=67.0, wind=2.14, rain=NaN]
-10:03:50.184 [Thread-2] INFO  n.c.p.service.WeatherApiService - Varnsdorf@CZ
-10:03:50.317 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1006, city=City [idCity=5, name=Varnsdorf, country=Country [idCountry=1, name=CZ, code=CZ], latitude=50.9124244, longitude=14.6194058], date=Mon May 20 10:03:50 CEST 2024, temperature=291.87, pressure=1012.0, humidity=71.0, wind=2.62, rain=NaN]
-10:03:51.418 [Thread-2] INFO  n.c.p.service.WeatherApiService - Oxford@GB
-10:03:51.538 [Thread-2] DEBUG n.c.p.service.WeatherApiService - New entry: Measurement [idMeasurement=1007, city=City [idCity=6, name=Oxford, country=Country [idCountry=2, name=GB, code=GB], latitude=51.7520131, longitude=-1.2578499], date=Mon May 20 10:03:51 CEST 2024, temperature=284.93, pressure=1015.0, humidity=81.0, wind=4.63, rain=NaN]
+09:22:58.848 [main] INFO  n.c.ppj2024.Ppj2024Application - Starting Ppj2024Application using Java 21.0.2 with PID 252468 (/home/des/Documents/school/ppj-2024/ppj-2024/target/classes started by des in /home/des/Documents/school/ppj-2024/ppj-2024)
+09:22:58.852 [main] INFO  n.c.ppj2024.Ppj2024Application - The following 1 profile is active: "prod"
+09:23:00.344 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+09:23:00.345 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.20]
+09:23:00.400 [main] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+09:23:00.572 [main] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+09:23:00.638 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.4.4.Final
+09:23:00.676 [main] INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+09:23:00.976 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+09:23:00.981 [main] WARN  c.z.hikari.util.DriverDataSource - Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+09:23:01.375 [main] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2faf6e4a
+09:23:01.377 [main] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+09:23:01.433 [main] WARN  org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+09:23:02.359 [main] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+09:23:03.358 [Thread-1] INFO  n.c.p.service.WeatherApiService - Entering initial loop over cities in config.
+09:23:03.358 [Thread-1] INFO  n.c.p.service.WeatherApiService - Prague@CZ
+09:23:03.472 [main] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+09:23:04.331 [main] INFO  n.c.ppj2024.Ppj2024Application - Started Ppj2024Application in 5.979 seconds (process running for 6.62)
+09:23:05.327 [Thread-1] INFO  n.c.p.service.WeatherApiService - London@GB
+09:23:06.755 [Thread-1] INFO  n.c.p.service.WeatherApiService - Berlin@D
+09:23:07.990 [Thread-1] INFO  n.c.p.service.WeatherApiService - Liberec@CZ
+09:23:09.420 [Thread-1] INFO  n.c.p.service.WeatherApiService - Varnsdorf@CZ
+09:23:10.656 [Thread-1] INFO  n.c.p.service.WeatherApiService - Oxford@GB
+09:23:11.987 [Thread-1] INFO  n.c.p.service.WeatherApiService - Worcester@GB
+09:23:13.147 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+09:23:13.209 [Thread-1] INFO  n.c.p.service.WeatherApiService - Dresden@D
+09:23:14.440 [Thread-1] INFO  n.c.p.service.WeatherApiService - Initial loop complete.
+09:23:14.600 [http-nio-8080-exec-4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 837 ms

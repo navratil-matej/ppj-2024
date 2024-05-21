@@ -5,6 +5,7 @@ import java.util.Date;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -25,16 +26,17 @@ public class Measurement
 	@ManyToOne @JoinColumn(name="idCity") @OnDelete(action = OnDeleteAction.CASCADE)
 	private City city;
 	@Column
+	@JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
 	private Date date;
-	@Column(nullable=true)
+	@Column
 	private double temperature;
-	@Column(nullable=true)
+	@Column
 	private double pressure;
-	@Column(nullable=true)
+	@Column
 	private double humidity;
-	@Column(nullable=true)
+	@Column
 	private double wind;
-	@Column(nullable=true)
+	@Column
 	private double rain;
 	
 	public Measurement() {}

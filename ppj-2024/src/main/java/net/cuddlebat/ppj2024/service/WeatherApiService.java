@@ -161,11 +161,11 @@ public class WeatherApiService implements InitializingBean, DisposableBean
 				 	var obj = mr.<Measurement>save(new Measurement(
 				 		city,
 				 		date,
-				 		main != null ? main.optDouble("temp")     : Double.NaN,
-						main != null ? main.optDouble("pressure") : Double.NaN,
-						main != null ? main.optDouble("humidity") : Double.NaN,
-						wind != null ? wind.optDouble("speed")    : Double.NaN,
-						rain != null ? rain.optDouble("1h")       : Double.NaN
+				 		(main != null && main.has("temp")    ) ? main.getDouble("temp")     : 0,
+						(main != null && main.has("pressure")) ? main.getDouble("pressure") : 0,
+						(main != null && main.has("humidity")) ? main.getDouble("humidity") : 0,
+						(wind != null && wind.has("speed")   ) ? wind.getDouble("speed")    : 0,
+						(rain != null && rain.has("1h")      ) ? rain.getDouble("1h")       : 0
 				 	));
 				 	log.debug("New entry: " + obj.toString());
 				}
