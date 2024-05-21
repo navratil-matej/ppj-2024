@@ -1,0 +1,27 @@
+{"properties": [
+  {
+    "name": "weatherApi.apiKey",
+    "type": "java.lang.String",
+    "description": "The API key to be used for API requests."
+  },
+  {
+    "name": "weatherApi.apiUrl",
+    "type": "java.lang.String",
+    "description": "The API url to be targetted by requests."
+  },
+  {
+    "name": "weatherApi.apiPeriodMs",
+    "type": "java.lang.String",
+    "description": "The time between requests in ms, to account for ratelimits."
+  },
+  {
+    "name": "weatherApi.cities",
+    "type": "java.lang.String",
+    "description": "A comma-separated list of cities in format 'City@CountryCode' to initiate the app with."
+  },
+  {
+    "name": "weatherApi.enabled",
+    "type": "java.lang.Boolean",
+    "description": "Whether bean should start its collection thread."
+  }
+]}
